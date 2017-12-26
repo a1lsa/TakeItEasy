@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item android:id="@+id/menu_card"
+              android:title="卡包管理"
+              android:icon="@drawable/menu_icon_card"
+              />
+
+        <item android:id="@+id/menu_account"
+              android:title="账户管理"
+              android:icon="@drawable/menu_icon_accent"/>
+
+        <item android:id="@+id/menu_setting"
+              android:title="设置"
+              android:icon="@drawable/menu_icon_setting"/>
+    </group>
+</menu>

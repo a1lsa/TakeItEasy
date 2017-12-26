@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GoGoPlay</string>
+
+    <string name="menu_title_card">卡包管理</string>
+    <string name="menu_title_account">账户管理</string>
+    <string name="menu_title_setting">设置</string>
+</resources>

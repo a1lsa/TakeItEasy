@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/base_layout"
+    tools:context="com.yyz.gogoplay.base.BaseActivity">
+
+   <android.support.v7.widget.Toolbar
+       android:layout_width="match_parent"
+       android:id="@+id/toolbar"
+       android:layout_height="@dimen/dimen_50">
+
+       <ImageView
+           android:layout_width="@dimen/dimen_32"
+           android:layout_height="@dimen/dimen_32"
+           android:padding="@dimen/dimen_03"
+           android:src="@drawable/icon_category"
+           android:id="@+id/toolbar_left_icon"
+           />
+       <TextView
+           android:layout_width="wrap_content"
+           android:text=""
+           android:layout_gravity="center"
+           android:gravity="center"
+           android:visibility="gone"
+           android:id="@+id/toolbar_title"
+           android:layout_height="match_parent"/>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:text=""
+           android:gravity="center"
+           android:layout_gravity="right"
+           android:visibility="gone"
+           android:id="@+id/toolbar_right_icon"
+           android:layout_marginRight="@dimen/dimen_10"
+           android:layout_height="match_parent"/>
+   </android.support.v7.widget.Toolbar>
+</LinearLayout>

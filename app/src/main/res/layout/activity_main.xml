@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yyz.gogoplay.MainActivity">
+
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        tools:openDrawer="left"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/layout_main_right"/>
+
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigation_header"
+            android:layout_width="@dimen/dimen_260"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            app:headerLayout="@layout/layout_menu_header"
+            app:menu="@menu/menu_main_left"
+            />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'//默认的应用程序模块
+apply plugin: 'com.jakewharton.butterknife'
+android {
+    compileSdkVersion 27 //编译版本
+    buildToolsVersion '27.0.2' //构建工具版本
+    defaultConfig {
+        applicationId "com.yyz.gogoplay"  //包名
+        minSdkVersion 19   //最低兼容版本
+        targetSdkVersion 26  // 建议版本
+        versionCode 1       //版本号
+        versionName "1.0"       //版本名
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false  //是否混淆
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    //本地依赖声明
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //测试用例库
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //声明测试用例库
+    compile 'com.android.support:appcompat-v7:+'
+    compile 'com.android.support:design:+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'de.hdodenhof:circleimageview:2.2.0'
+}

@@ -1,0 +1,23 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {//闭包
+        jcenter()//代码托管库：设置后可以在项目中轻松引用jcenter上的开源项目
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.1'//声明gradle插件，2.3.1为插件版本号
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()//代码托管库：设置后可以在项目中轻松引用jcenter上的开源项目
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
