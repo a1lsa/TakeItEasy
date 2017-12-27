@@ -13,4 +13,9 @@
 
     <color name="text">#666666</color>
     <color name="title_text">#333333</color>
+
+    <color name="cus_pink">#c96161</color>
+
+    <color name="ybp_start">#e7b7b9</color>
+    <color name="ybp_end">#f70905</color>
 </resources>

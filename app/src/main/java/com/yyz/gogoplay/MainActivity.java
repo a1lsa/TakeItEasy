@@ -1,6 +1,8 @@
 package com.yyz.gogoplay;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,6 +21,7 @@ import com.yyz.gogoplay.view.MainView;
 import com.yyz.gogoplay.view.impl.JokesFragment;
 import com.yyz.gogoplay.view.impl.MovieFragment;
 import com.yyz.gogoplay.view.impl.NewsFragment;
+import com.yyz.gogoplay.view.impl.UserAccountActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +40,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
     Toolbar mainToolbar;
     @BindView(R.id.view_pager)
     ViewPager viewPager;
-    @BindView(R.id.navigation_header)
-    NavigationView navigationHeader;
+    @BindView(R.id.navigation)
+    NavigationView navigation;
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
     String[] titles = new String[]{"电影", "新闻", "段子"};
@@ -52,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
         setContentView(getLayoutViewRes());
         ButterKnife.bind(this);
         initView();
+
+        initEvent();
     }
 
 
@@ -74,6 +80,24 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void initEvent() {
+        navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.menu_card:
+
+                        break;
+                    case R.id.menu_account:
+                        Intent intent=new Intent(MainActivity.this,UserAccountActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.menu_setting:
+                        break;
+                }
+                return false;
+            }
+        });
 
     }
 
